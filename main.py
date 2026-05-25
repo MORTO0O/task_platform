@@ -26,5 +26,10 @@ if __name__ == '__main__':
     for task in high_priority:
         print(f"ВАЖНАЯ ЗАДАЧА: {task.id} Приоритет: {task.priority}")
 
+    print("Фильтрация по статусу")
+    ready_status = queue.filter_by_status("ready")
+    for task in ready_status:
+        print(f"ГОТОВЫЕ ЗАДАЧИ: {task.id}. Статус: {task.status}")
+
     all_tasks_list = list(queue)
     print(f"\nВсего задач в очереди: {len(all_tasks_list)}")
